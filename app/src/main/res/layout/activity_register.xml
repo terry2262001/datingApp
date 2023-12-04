@@ -53,6 +53,7 @@
                 android:orientation="vertical"
                 android:layout_margin="16dp">
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userImage"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
@@ -108,16 +109,16 @@
                         android:inputType="text"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
-<CheckBox
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="@color/black"
-    android:layout_gravity="center_horizontal"
-    android:id="@+id/cbAccept"
-    android:text="By clicking on that  you are accepting our terms and coditions"
-    android:textSize="10sp"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/cbAccept"
+                    android:text="By clicking on that  you are accepting our terms and coditions"
+                    android:textSize="10sp"/>
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_send_otp"
+                    android:id="@+id/saveData"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="12dp"

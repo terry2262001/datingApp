@@ -67,11 +67,12 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
           //      binding.btnSendOtp.showNormalButton()
+                dialog.dismiss()
                 signInWithPhoneAuthCredential(credential)
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
-                dialog.dismiss()
+
             }
 
             override fun onCodeSent(
@@ -102,11 +103,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
           //      binding.btnSendOtp.showNormalButton()
                 if (task.isSuccessful) {
-                    //checkUserExist(binding.userNumber.text.toString())
-
-                    dialog.dismiss()
-                    startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
-                  //  startActivity(Intent(this,MainActivity::class.java))
+                    checkUserExist(binding.userNumber.text.toString())
                     finish()
                 } else {
                     dialog.dismiss()
@@ -124,7 +121,6 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(Intent(this@LoginActivity,MainActivity::class.java))
                         finish()
                     }else{
-                        dialog.dismiss()
                         startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
                         finish()
                     }
